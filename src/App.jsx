@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 
 export const App = () => {
@@ -11,6 +12,8 @@ export const App = () => {
   const countDownButton = () => {
     setNum(num - 1);
   }
+
+  useEffect(() => {alert();}, [num]); // numの値が変わった場合のみalert()を実行
 
   return (
     <div>
